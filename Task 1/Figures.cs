@@ -104,33 +104,4 @@ namespace TestLibrary
 			return (sideA + sideB >= sideC) && (sideA + sideC >= sideA) && (sideB + sideC >= sideA);	
 		}
 	}
-
-
-
-	// А вообще можно было бы сделать что-то вроде вот такого варианта для произвольного многоугольника
-	public class Polygon : IFigure
-	{
-		// Стороны прямоугольника
-		private double[] sides;
-
-		public Polygon(params double[] initialSides) 
-		{
-			// Проверки на корректность аргументов
-			// (или, опять же, через порождающий метод)
-			// ...
-
-			sides = initialSides;
-		}
-
-		// Чтоб, например, List тоже можно было передавать
-		public Polygon(IEnumerable<double> initialSides) : this(initialSides.ToArray<double>()) { }
-
-
-
-		public double GetArea()
-		{
-			// Здесь на основании сторон вычисляем площадь по формуле площади Гаусса
-			return 0; 
-		}
-	}
 }
